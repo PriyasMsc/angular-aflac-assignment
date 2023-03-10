@@ -1,11 +1,8 @@
-<p>
-  <mat-toolbar color="primary">
-    <span>Submitted Claims</span>
-  </mat-toolbar>
-</p>
-
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
-  <mat-tab label="First">Content 1</mat-tab>
-  <mat-tab label="Second">Content 2</mat-tab>
-  <mat-tab label="Third">Content 3</mat-tab>
-</mat-tab-group>
+<app-header></app-header>
+<div
+  class="container h-100 d-flex justify-content-center justify-content-md-center"
+>
+  <mat-card>
+    <mat-card-content><router-outlet></router-outlet></mat-card-content>
+  </mat-card>
+</div>
