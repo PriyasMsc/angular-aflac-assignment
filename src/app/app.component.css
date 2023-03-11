@@ -1,3 +1,10 @@
-.mat-tab-group {
-  margin-bottom: 48px;
+.flex-me {
+  display: inline-flex;
+  flex-flow: row wrap;
+  background: grey;
+}
+
+mat-card {
+  height: 47em;
+  width: 30em;
 }

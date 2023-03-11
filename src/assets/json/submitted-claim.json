@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "patientDetails": {
+      "firstName": "John",
+      "lastName": "Smith"
+    },
+    "claimDetails": {
+      "claimNumber": "CL34246334",
+      "dateSubmitted": "2007-04-26T00:00:00",
+      "claimStatus": "ADDITIONAL_INFO_REQUIRED"
+    }
+  },
+  {
+    "id": 2,
+    "patientDetails": {
+      "firstName": "John",
+      "lastName": "Smith"
+    },
+    "claimDetails": {
+      "claimNumber": "CL34243334",
+      "dateSubmitted": "2010-04-26T00:00:00",
+      "claimStatus": "COMPLETED"
+    }
+  },
+  {
+    "id": 3,
+    "patientDetails": {
+      "firstName": "Steve",
+      "lastName": "Bernard"
+    },
+    "claimDetails": {
+      "claimNumber": "CL34234334",
+      "dateSubmitted": "2013-04-26T00:00:00",
+      "claimStatus": "NOT_RECEIVED"
+    }
+  }
+]

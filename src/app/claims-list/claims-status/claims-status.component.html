@@ -1,1 +1,221 @@
-<p>claims-status works!</p>
+<div *ngFor="let item of claimStatusList">
+  <mat-card class="card">
+    <mat-card-content>
+      <div class="row">
+        <div class="col-4">
+          <div class="form-group">
+            <label for="patient-name" class="col-form-label">
+              <span class="fw-bold">Patient name</span>
+            </label>
+          </div>
+        </div>
+        <div class="col-4">
+          <label for="patient-name-data" class="col-form-label">
+            {{
+              item.patientDetails.firstName + ' ' + item.patientDetails.lastName
+            }}
+          </label>
+        </div>
+        <div class="col-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="form-group">
+            <label for="claim-number" class="col-form-label">
+              <span class="fw-bold">Claim Number</span>
+            </label>
+          </div>
+        </div>
+        <div class="col-4">
+          <label for="claim-number-data" class="col-form-label">
+            {{ item.claimDetails.claimNumber }}
+          </label>
+        </div>
+        <div class="col-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="form-group">
+            <label for="date-submitted" class="col-form-label">
+              <span class="fw-bold">Date Submitted</span>
+            </label>
+          </div>
+        </div>
+        <div class="col-4">
+          <label for="date-submitted-data" class="col-form-label">
+            {{ item.claimDetails.dateSubmitted | date: 'shortDate' }}
+          </label>
+        </div>
+        <div class="col-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="document-status" class="col-form-label">
+              <span class="fw-bold">Document Status</span>
+            </label>
+          </div>
+        </div>
+        <div
+          class="col-12"
+          style="float: right; margin-left: 127px; margin-top: -40px;"
+        >
+          <label
+            for="document-status-data"
+            *ngIf="item.claimDetails.claimStatus == 'COMPLETED'"
+            class="col-form-label"
+          >
+            <mat-icon class="check-circle">
+              check_circle
+            </mat-icon>
+            <span>{{ item.claimDetails.claimStatus }}</span>
+          </label>
+          <label
+            for="document-status-data"
+            *ngIf="item.claimDetails.claimStatus == 'ADDITIONAL_INFO_REQUIRED'"
+            class="col-form-label"
+          >
+            <mat-icon class="error">
+              error
+            </mat-icon>
+            <span>{{ item.claimDetails.claimStatus }}</span>
+          </label>
+          <label
+            for="document-status-data"
+            *ngIf="item.claimDetails.claimStatus == 'NOT_RECEIVED'"
+            class="col-form-label"
+          >
+            <mat-icon class="close">
+              close
+            </mat-icon>
+            <span>{{ item.claimDetails.claimStatus }}</span>
+          </label>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<!-- <mat-card class="card">
+  <mat-card-content>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="patient-name" class="col-form-label">
+            <span class="fw-bold">Patient name</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="patient-name-data" class="col-form-label">
+          John Smith
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="claim-number" class="col-form-label">
+            <span class="fw-bold">Claim Number</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="claim-number-data" class="col-form-label">
+          121212
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="date-submitted" class="col-form-label">
+            <span class="fw-bold">Date Submitted</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="date-submitted-data" class="col-form-label">
+          12/12/12
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="document-status" class="col-form-label">
+            <span class="fw-bold">Document Status</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="document-status-data" class="col-form-label">
+          <mat-icon class="check-circle">check_circle</mat-icon>
+          <mat-icon class="error">error</mat-icon>
+          <mat-icon class="close">close</mat-icon>
+        </label>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card class="card">
+  <mat-card-content>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="patient-name" class="col-form-label">
+            <span class="fw-bold">Patient name</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="patient-name-data" class="col-form-label">
+          John Smith
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="claim-number" class="col-form-label">
+            <span class="fw-bold">Claim Number</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="claim-number-data" class="col-form-label">
+          121212
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="date-submitted" class="col-form-label">
+            <span class="fw-bold">Date Submitted</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="date-submitted-data" class="col-form-label">
+          12/12/12
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="document-status" class="col-form-label">
+            <span class="fw-bold">Document Status</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-6">
+        <label for="document-status-data" class="col-form-label">
+          <mat-icon class="check-circle">check_circle</mat-icon>
+          <mat-icon class="error">error</mat-icon>
+          <mat-icon class="close">close</mat-icon>
+        </label>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card> -->

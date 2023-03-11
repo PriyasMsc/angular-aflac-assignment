@@ -1,0 +1,32 @@
+.card {
+  max-width: 400px;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  background-color: whitesmoke;
+}
+.check-circle {
+  color: limegreen;
+}
+.error {
+  color: orange;
+}
+.close {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+.arrow-icon{
+  float: right;
+  position: relative;
+  top: -100px;
+  font-size: 50px;
+  left: -19px;
+  height: 50px;
+  width: 38px;
+}
